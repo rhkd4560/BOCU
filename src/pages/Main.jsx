@@ -42,7 +42,7 @@ const Poster = styled.img`
 
   @media (min-width: 768px) {
     width: auto;
-    height: 92vh;
+    height: auto;
     max-width: 560px;
     object-fit: contain;
   }
