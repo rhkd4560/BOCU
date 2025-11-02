@@ -1,33 +1,44 @@
 import React from "react";
 import styled from "styled-components";
-import BOCU_IMG from '../assets/BOCU_IMG.png'
+import BOCU_IMG from "../assets/BOCU_IMG.png";
 
-// 전체 화면을 차지하며 가운데 정렬
+const Main = () => {
+  return (
+    <Wrapper>
+      <Poster src={BOCU_IMG} alt="BOCU CAREER FAIR" />
+    </Wrapper>
+  );
+};
+
+export default Main;
+
 const Wrapper = styled.main`
   min-height: 100vh;
   width: 100%;
   display: flex;
-  align-items: center;      /* 세로 중앙 */
-  justify-content: center;  /* 가로 중앙 */
-  background: white;      /* 필요시 배경색 */
-  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+
+  /* 데스크톱에서 여백(화이트) 보이도록 배경을 흰색으로 */
+  background: #ffffff;
 `;
 
-// 이미지 비율 유지, 가로 폭 기준 축소
-const CenteredImage = styled.img`
-  display: block;
-  max-width: 520px;  /* 원본이 세로 배너라 적당한 상한선 */
-  width: 100%;       /* 컨테이너에 맞춰 축소 */
-  height: auto;      /* 비율 유지 */
+/* 
+  모바일(기본): 화면 꽉 채움 (cover) → 여백 없음
+  데스크톱(>=768px): 포스터를 중앙에 담아 보여줌 (contain) → 양쪽 여백 생김
+*/
+const Poster = styled.img`
+  /* Mobile default */
+  width: 100%;
+  height: auto;
   object-fit: contain;
+  object-position: center;
+  display: block;
+
+  @media (min-width: 768px) {
+    /* Desktop */
+    width: 100%;
+    max-width: 560px;     /* 너무 커지지 않게 상한 설정 */
+    object-fit: contain;  /* 전체 이미지 보이게 */
+  }
 `;
-
-const Main = () => {
-    return (
-        <Wrapper>
-            <CenteredImage src={BOCU_IMG} alt="BOCU" />
-        </Wrapper>
-    )
-}
-
-export default Main;
