@@ -28,16 +28,17 @@ const Wrapper = styled.main`
   데스크톱(>=768px): 포스터를 중앙에 담아 보여줌 (contain) → 양쪽 여백 생김
 */
 const Poster = styled.img`
-  /* Mobile default */
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+  width: 100vw;
+  height: 100vh;
+  height: -webkit-fill-available; /* iOS 랜딩뷰 꽉 채우기 */
+  object-fit: cover;
   object-position: center;
   display: block;
 
   @media (min-width: 768px) {
-    /* Desktop */
     width: 100%;
-    object-fit: contain;  /* 전체 이미지 보이게 */
+    height: auto;
+    max-width: 560px;
+    object-fit: contain;
   }
 `;
