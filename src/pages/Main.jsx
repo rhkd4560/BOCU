@@ -38,7 +38,6 @@ const Poster = styled.img`
   @media (min-width: 768px) {
     /* Desktop */
     width: 100%;
-    max-width: 560px;     /* 너무 커지지 않게 상한 설정 */
     object-fit: contain;  /* 전체 이미지 보이게 */
   }
 `;
