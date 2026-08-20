@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
-import BOCU_IMG from "../assets/BOCU_IMG.png";
+import INNOFAIR_IMG from "../assets/INNOFAIR_IMG.jpg";
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root { min-height: 100%; margin: 0; }
@@ -13,7 +13,7 @@ const Main = () => {
     <>
       <GlobalStyle />
       <Wrapper>
-        <Poster src={BOCU_IMG} alt="BOCU CAREER FAIR" />
+        <Poster src={INNOFAIR_IMG} alt="INNO FAIR" />
       </Wrapper>
     </>
   );
